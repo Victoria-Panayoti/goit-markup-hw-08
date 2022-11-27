@@ -888,6 +888,9 @@ body {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
+  .footer-container {
+    width: 768px;
+  }
   .footer-container .footer-thumb {
     display: flex;
     justify-content: space-around;
@@ -895,6 +898,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .footer-container {
+    width: 1200px;
     display: flex;
     gap: 94px;
     align-items: flex-start;

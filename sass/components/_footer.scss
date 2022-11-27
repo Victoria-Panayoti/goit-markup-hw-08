@@ -20,12 +20,14 @@
 .footer-container {
   width: 100%;
   @include tablet {
+    width: 768px;
     .footer-thumb {
       display: flex;
       justify-content: space-around;
     }
   }
   @include desktop {
+    width: 1200px;
     display: flex;
     gap: 94px;
     align-items: flex-start;
