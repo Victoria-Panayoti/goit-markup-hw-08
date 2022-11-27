@@ -1,9 +1,16 @@
 .header {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   border: 1px solid #ececec;
+  @include tablet {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  @include desktop {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
-
 .header__container {
   display: flex;
   align-items: center;
@@ -15,21 +22,34 @@
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.16;
   letter-spacing: 0.03em;
   color: var(--text-black);
+  @include desktop {
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 .navigation__logo {
-  margin-right: 93px;
+  @include tablet {
+    margin-right: 88px;
+  }
+  @include desktop {
+    margin-right: 93px;
+  }
 }
 .logoaccent {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.16;
   letter-spacing: 0.03em;
   color: var(--color-accent);
+  @include desktop {
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 .navigation__list {
   display: none;
@@ -39,19 +59,25 @@
   & .link {
     position: relative;
     display: block;
-    height: 48px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--secondary-text-color);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include tablet {
+      height: 40px;
+    }
+    @include desktop {
+      height: 40px;
+    }
   }
+
   & .link:hover,
   & .link:focus {
     color: var(--color-accent);
   }
-  @include tablet{
+  @include tablet {
     display: flex;
   }
 }
@@ -96,15 +122,15 @@
     gap: 10px;
   }
 }
-@include tablet{
-.icon-mail{
-  width: 14px;
-  height: 10px;
-.icon-tel{
-width: 10px;
-  height: 14px;
+@include tablet {
+  .icon-mail {
+    width: 14px;
+    height: 10px;
+    .icon-tel {
+      width: 10px;
+      height: 14px;
+    }
   }
-}
 }
 @include desktop {
   .icon-mail {
@@ -150,7 +176,7 @@ width: 10px;
   z-index: 1;
   padding-top: 48px;
   padding-bottom: 48px;
-  > .menu-container{
+  > .menu-container {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -169,15 +195,15 @@ width: 10px;
   border: none;
   background-color: transparent;
   &:hover,
-  &:focus{
+  &:focus {
     fill: var(--color-accent);
   }
 }
-
-.mob-navigation-list {
-  margin-bottom: 32px;
+.mob-navigation-list{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
-
 .mob-navigation-list__link {
   display: block;
   font-weight: 500;
@@ -187,10 +213,6 @@ width: 10px;
   color: var(--secondary-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mob-navigation-list__link:not(:last-chiled) {
-  margin-bottom: 32px;
-}
-
 .mob-navigation-list__link:hover,
 .mob-navigation-list__link:focus {
   color: var(--color-accent);
@@ -198,6 +220,16 @@ width: 10px;
 
 .mob-navigation-list__link.current {
   color: var(--color-accent);
+}
+.mob-menu-bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.mob-contact{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 .mob-contact-tel {
   font-weight: 500;
@@ -213,18 +245,17 @@ width: 10px;
   line-height: calc(28 / 24);
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
-  margin-bottom: 64px;
 }
 .mob-soc-list {
   display: flex;
   gap: 20px;
 }
-.mob-soc-item{
+.mob-soc-item {
   position: relative;
 }
 .mob-soc-item:not(:last-child)::after {
   position: absolute;
-  content: '';
+  content: "";
   right: -10px;
   width: 1px;
   height: 22px;
@@ -235,5 +266,5 @@ width: 10px;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.02em;
-  color:var(--color-accent) ;
+  color: var(--color-accent);
 }
