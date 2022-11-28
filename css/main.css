@@ -948,6 +948,11 @@ body {
 .footer-block:not(:last-child) {
   margin-bottom: 60px;
 }
+@media screen and (min-width: 768px) {
+  .footer-block:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
 
 .footer-list {
   display: inline-block;
@@ -1043,7 +1048,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: transparent;
-  margin-bottom: 20px;
 }
 .mailing-input::-moz-placeholder {
   font-size: 16px;
@@ -1074,7 +1078,6 @@ body {
 @media screen and (min-width: 768px) {
   .mailing-input {
     width: 450px;
-    margin: 0;
   }
 }
 @media screen and (min-width: 1200px) {

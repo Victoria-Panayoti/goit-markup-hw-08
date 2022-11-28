@@ -68,6 +68,9 @@
 }
 .footer-block:not(:last-child){
   margin-bottom: 60px;
+  @include tablet{
+    margin-bottom: 0;
+  }
 }
 .footer-list {
   display: inline-block;
@@ -160,13 +163,11 @@
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
   }
-  margin-bottom: 20px;
   @include mobile{
     width: 450px;
   }
   @include tablet {
     width: 450px;
-    margin: 0;
   }
   @include desktop {
     width: 358px;
