@@ -945,11 +945,13 @@ body {
   }
 }
 
+.footer-block:not(:last-child) {
+  margin-bottom: 60px;
+}
+
 .footer-list {
   display: inline-block;
   width: 231px;
-  height: 81px;
-  margin-bottom: 60px;
 }
 @media screen and (min-width: 768px) {
   .footer-list {
@@ -1008,13 +1010,11 @@ body {
   fill: var(--text-white);
 }
 
-@media screen and (min-width: 768px) {
-  .form-mailing {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
-  }
+.form-mailing {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 1200px) {
   .form-mailing {
