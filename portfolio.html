@@ -26,32 +26,125 @@
             <span class="logoaccent">Web</span>Studio</a
           >
           <ul class="navigation__list list">
-            <li><a href="./index.html" class="link current">Студія</a></li>
-            <li><a href="./portfolio.html" class="link">Портфоліо</a></li>
+            <li><a href="./index.html" class="link">Студія</a></li>
+            <li>
+              <a href="./portfolio.html" class="link current">Портфоліо</a>
+            </li>
             <li><a href="" class="link">Контакти</a></li>
           </ul>
         </nav>
-        <ul class="authorization list">
-          <li class="authorization__item">
-            <a
-              href="mailto:info@devstudio.com"
-              class="link list authorization-link"
-            >
-              <svg width="16" height="12">
+        <ul class="contact list">
+          <li class="contact__item">
+            <a href="mailto:info@devstudio.com" class="link list contact-link">
+              <svg class="icon-mail" width="16" height="12">
                 <use href="./images/icons.svg#icon-envelope"></use>
               </svg>
               info@devstudio.com</a
             >
           </li>
-          <li class="authorization__item">
-            <a href="tel:+380961111111" class="link list authorization-link">
-              <svg width="10" height="16">
+          <li class="contact__item">
+            <a href="tel:+380961111111" class="link list contact-link">
+              <svg class="icon-tel" width="10" height="16">
                 <use href="./images/icons.svg#icon-smartphone"></use>
               </svg>
               +38 096 111 11 11</a
             >
           </li>
         </ul>
+        <button type="button" class="button menu-open" data-menu-open>
+          <svg width="40" height="40">
+            <use href="./images/icons.svg#icon-menu-open"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="mob-menu is-hidden" data-menu>
+        <div class="menu-container">
+          <div class="mob-menu-top">
+            <button type="button" class="button menu-close" data-menu-close>
+              <svg width="40" height="40">
+                <use href="./images/icons.svg#icon-menu-close"></use>
+              </svg>
+            </button>
+            <div>
+              <ul class="mob-navigation-list list">
+                <li class="mob-navigation-list__item">
+                  <a
+                    href="./index.html"
+                    class="link mob-navigation-list__link current"
+                    >Студія</a
+                  >
+                </li>
+                <li class="mob-navigation-list__item">
+                  <a
+                    href="./portfolio.html"
+                    class="link mob-navigation-list__link"
+                    >Портфоліо</a
+                  >
+                </li>
+                <li class="mob-navigation-list__item">
+                  <a href="" class="link mob-navigation-list__link">Контакти</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mob-menu-bottom">
+            <ul class="mob-contact list">
+              <li class="mob-contact__item">
+                <a href="tel:+380961111111" class="link list mob-contact-tel"
+                  >+38 096 111 11 11</a
+                >
+              </li>
+              <li class="mob-contact__item">
+                <a
+                  href="mailto:info@devstudio.com"
+                  class="link list mob-contact-mail"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="mob-soc-list list">
+              <li class="mob-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="mob-soc-link link"
+                  >Instagram</a
+                >
+              </li>
+              <li class="mob-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="mob-soc-link link"
+                >
+                  Twitter</a
+                >
+              </li>
+              <li class="mob-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="mob-soc-link link"
+                >
+                  Facebook</a
+                >
+              </li>
+              <li class="mob-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="mob-soc-link link"
+                >
+                  LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <main>
@@ -69,7 +162,9 @@
             <li>
               <button type="button" class="filter-button">Додатки</button>
             </li>
-            <li><button type="button" class="filter-button">Дизайн</button></li>
+            <li>
+              <button type="button" class="filter-button">Дизайн</button>
+            </li>
             <li>
               <button type="button" class="filter-button">Маркетинг</button>
             </li>
@@ -79,12 +174,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/tehnokryak.jpg"
-                    alt="Фото команди проекту"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/tehnokryak.jpg     1x,
+                        ./images/gallery/tehnokryak-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/tehnokryak-tab.jpg    1x,
+                        ./images/gallery/tehnokryak-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/tehnokryak-mob.jpg    1x,
+                        ./images/gallery/tehnokryak-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/tehnokryak.jpg"
+                      alt="Фото команди проекту"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -100,12 +218,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/poster.jpg"
-                    alt="Два баскетболіста"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/poster.jpg     1x,
+                        ./images/gallery/poster-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/poster-tab.jpg    1x,
+                        ./images/gallery/poster-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/poster-mob.jpg    1x,
+                        ./images/gallery/poster-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/poster.jpg"
+                      alt="Два баскетболіста"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -123,12 +264,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/seafood.jpg"
-                    alt="Логотип ресторану"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/seafood.jpg     1x,
+                        ./images/gallery/seafood-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/seafood-tab.jpg    1x,
+                        ./images/gallery/seafood-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/seafood-mob.jpg    1x,
+                        ./images/gallery/seafood-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/seafood.jpg"
+                      alt="Логотип ресторану"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -144,12 +308,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/prime.jpg"
-                    alt="Навушники"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/prime.jpg     1x,
+                        ./images/gallery/prime-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/prime-tab.jpg    1x,
+                        ./images/gallery/prime-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/prime-mob.jpg    1x,
+                        ./images/gallery/prime-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/prime.jpg"
+                      alt="Навушники"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -165,12 +352,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/boxes.jpg"
-                    alt="Дві коробки"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/boxes.jpg     1x,
+                        ./images/gallery/boxes-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/boxes-tab.jpg    1x,
+                        ./images/gallery/boxes-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/boxes-mob.jpg    1x,
+                        ./images/gallery/boxes-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/boxes.jpg"
+                      alt="Дві коробки"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -186,12 +396,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/inspiration.jpg"
-                    alt="Мапа на сторінці сайту"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/inspiration.jpg     1x,
+                        ./images/gallery/inspiration-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/inspiration-tab.jpg    1x,
+                        ./images/gallery/inspiration-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/inspiration-mob.jpg    1x,
+                        ./images/gallery/inspiration-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/inspiration.jpg"
+                      alt="Мапа на сторінці сайту"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -207,12 +440,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/magazine.jpg"
-                    alt="Розгорнутий журнал"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/magazine.jpg     1x,
+                        ./images/gallery/magazine-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/magazine-tab.jpg    1x,
+                        ./images/gallery/magazine-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/magazine-mob.jpg    1x,
+                        ./images/gallery/magazine-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/magazine.jpg"
+                      alt="Розгорнутий журнал"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -228,12 +484,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/label.jpg"
-                    alt="Етикетка"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/label.jpg     1x,
+                        ./images/gallery/label-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/label-tab.jpg    1x,
+                        ./images/gallery/label-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/label-mob.jpg    1x,
+                        ./images/gallery/label-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/label.jpg"
+                      alt="Етикетка"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -249,12 +528,35 @@
             <li class="gallery-card">
               <a href="" class="gallery-card-link link">
                 <div class="gallery-card-thumb">
-                  <img
-                    class="gallery-card-img"
-                    src="./images/business.jpg"
-                    alt="Руки на клавіатурі"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        .images/gallery/business.jpg     1x,
+                        ./images/gallery/business-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/business-tab.jpg    1x,
+                        ./images/gallery/business-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/gallery/business-mob.jpg    1x,
+                        ./images/gallery/business-mob-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      src="./images/gallery/business.jpg"
+                      alt="Руки на клавіатурі"
+                      width="450"
+                      class="gallery-card-img"
+                    />
+                  </picture>
                   <p class="gallery-card-overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -271,98 +573,98 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="section footer">
       <div class="container footer-container">
-        <div>
-          <a href="./index.html" class="logo link">
-            <span class="logoaccent">Web</span>Studio
-          </a>
-          <address>
-            <ul class="footer-list list">
-              <li class="footer-list-item">
+        <div class="footer-thumb">
+          <div class="footer-block">
+            <a href="./index.html" class="logo link">
+              <span class="logoaccent">Web</span>Studio
+            </a>
+            <address>
+              <ul class="footer-list list">
+                <li class="footer-list-item">
+                  <a
+                    href="https://goo.gl/maps/CPtrU1FHBa2aNyZL9"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    class="link"
+                    >м. Київ, пр-т Лесі Українки, 26</a
+                  >
+                </li>
+                <li class="footer-list-item">
+                  <a href="mailto:info@devstudio.com" class="link mail"
+                    >info@devstudio.com</a
+                  >
+                </li>
+                <li class="footer-list-item">
+                  <a href="tel:+380961111111" class="link tel"
+                    >+38 096 111 11 11</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer-block">
+            <p class="footer-slogan">приєднуйтесь</p>
+            <ul class="footer-soc-list list">
+              <li class="footer-soc-item">
                 <a
-                  href="https://goo.gl/maps/CPtrU1FHBa2aNyZL9"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  class="link"
-                  >м. Київ, пр-т Лесі Українки, 26</a
+                  class="footer-soc-link link"
                 >
+                  <svg class="soc-icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-instagram"></use></svg
+                ></a>
               </li>
-              <li class="footer-list-item">
-                <a href="mailto:info@devstudio.com" class="link mail"
-                  >info@devstudio.com</a
+              <li class="footer-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="footer-soc-link link"
                 >
+                  <svg class="soc-icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-twitter"></use></svg
+                ></a>
               </li>
-              <li class="footer-list-item">
-                <a href="tel:+380961111111" class="link tel"
-                  >+38 096 111 11 11</a
+              <li class="footer-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="footer-soc-link link"
                 >
+                  <svg class="soc-icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-facebook"></use></svg
+                ></a>
+              </li>
+              <li class="footer-soc-item">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="footer-soc-link link"
+                >
+                  <svg class="soc-icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-linkedin"></use></svg
+                ></a>
               </li>
             </ul>
-          </address>
+          </div>
         </div>
-        <div>
-          <p class="footer-slogan">приєднуйтесь</p>
-          <ul class="footer-soc-list list">
-            <li class="footer-soc-item">
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="footer-soc-link link"
-              >
-                <svg class="soc-icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-instagram"></use></svg
-              ></a>
-            </li>
-            <li class="footer-soc-item">
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="footer-soc-link link"
-              >
-                <svg class="soc-icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-twitter"></use></svg
-              ></a>
-            </li>
-            <li class="footer-soc-item">
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="footer-soc-link link"
-              >
-                <svg class="soc-icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-facebook"></use></svg
-              ></a>
-            </li>
-            <li class="footer-soc-item">
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="footer-soc-link link"
-              >
-                <svg class="soc-icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-linkedin"></use></svg
-              ></a>
-            </li>
-          </ul>
-        </div>
-        <div>
+        <div class="footer-block">
           <p class="mailing-slogan">Підпишіться на розсилку</p>
           <form class="form-mailing">
-            <div>
-              <input
-                class="mailing-input"
-                type="email"
-                name="mail"
-                id="mail"
-                placeholder="E-mail"
-              />
-              <label for="mail"></label>
-            </div>
+            <input
+              class="mailing-input"
+              type="email"
+              name="mail"
+              id="mail"
+              placeholder="E-mail"
+            />
+            <label for="mail"></label>
             <button type="submit" class="mailing-btn">
               Підписатися
               <svg class="mailing-icon" width="24" height="24">
@@ -373,5 +675,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

@@ -1,13 +1,19 @@
 .filter-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 50px;
+  justify-content: flex-start;
+  row-gap: 8px;
+  column-gap: 15px;
+  margin-bottom: 40px;
+  @include tablet {
+    justify-content: center;
+  }
 }
 .filter-button {
   background-color: var(--bcg-secondary);
   color: var(--secondary-text-color);
+  height: 38px;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -35,12 +41,28 @@
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: calc((100% - 60px) / 3);
-  row-gap: 30px;
-  column-gap: 30px;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include tablet{
+    justify-content: flex-start;
+  }
 }
 .gallery-card {
   background-color: var(--bcg-main);
+  @include mobile {
+    max-width: 450px;
+  }
+  @include tablet {
+    width: 354px;
+    flex-basis: calc((100% - 30px) / 2);
+    row-gap: 30px;
+    column-gap: 30px; 
+  }
+  @include desktop{
+    flex-basis: calc((100% - 60px) / 3);
+  }
 }
 .gallery-card-link {
   display: inline-block;
@@ -78,9 +100,13 @@
 }
 .gallery-card-sign {
   padding: 20px 24px;
+  height: 110px;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
+  @include tablet{
+    height: 146px;
+  }
 }
 .gallery-card-title {
   font-weight: 700;
@@ -90,6 +116,7 @@
   color: var(--secondary-text-color);
 }
 .gallery-card-txt {
+  font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
